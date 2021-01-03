@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: spacexstarlink 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spacexstarlink
+  template:
+    metadata:
+      labels:
+        app: spacexstarlink 
+    spec:
+      containers:
+        - name: spacexstarlink 
+          image: spacexstarlinkcntreg.azurecr.io/spacexstarlink
+          ports:
+          - containerPort: 80
