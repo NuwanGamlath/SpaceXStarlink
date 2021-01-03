@@ -58,8 +58,8 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/kubernetes/mongodb.yml
-                $(Pipeline.Workspace)/kubernetes/spacexstarlink.yml
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
