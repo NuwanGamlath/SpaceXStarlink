@@ -24,10 +24,7 @@ spec:
           - name: MongoDbSettings__Host
             value: mongodb-service
           - name: MongoDbSettings__Password
-            valueFrom:
-                secretKeyRef:
-                  name: spacexstarlink-secrets
-                  key: mongodb-password
+            value: Pass#word1 
         livenessProbe:
           httpGet:
             path: /health/live
