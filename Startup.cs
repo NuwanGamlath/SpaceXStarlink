@@ -52,7 +52,10 @@ namespace SpaceXStarlink
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SpaceXStarlink", Version = "v1" });
             });
             services.AddHealthChecks()
-                .AddMongoDb(mongoDbSettings.ConnectionString, name: "mongodb",timeout: TimeSpan.FromSeconds(3),tags: new[] {"ready"});
+                .AddMongoDb(mongoDbSettings.ConnectionString,
+                            name: "mongodb",
+                            timeout: TimeSpan.FromSeconds(3),
+                            tags: new[] { "ready" });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
