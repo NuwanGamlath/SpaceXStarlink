@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: spacexstarlink-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: spacexstarlink
