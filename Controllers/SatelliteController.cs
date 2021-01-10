@@ -42,7 +42,7 @@ namespace SpaceXStarlink.Controllers
         }
        // Post / Satellite
        [HttpPost]
-        public async Task<ActionResult<SatelliteDto>> CreateSatelliteAsync(CreateSatelliteDto satelliteDto)
+        public async Task<ActionResult> CreateSatelliteAsync(CreateSatelliteDto satelliteDto)
         {
            Satellite satellite = new ()
            {
@@ -53,8 +53,8 @@ namespace SpaceXStarlink.Controllers
                Altitude = satelliteDto.Altitude
            };
            await satelliteRepository.CreateSatelliteAsync(satellite);
-
-           return CreatedAtAction(nameof(GetSatelliteAsync),new {id = satellite.Id},satellite.AsDto());
+           return NoContent();
+          // return CreatedAtAction(nameof(GetSatelliteAsync),new {id = satellite.Id},satellite.AsDto());
         }
         // Put / Satellite / {id}
         [HttpPut("{id}")]
