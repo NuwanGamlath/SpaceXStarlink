@@ -38,14 +38,14 @@ spec:
             port: 80
           initialDelaySeconds: 15
           timeoutSeconds: 30
-          periodSecond: 15
+          periodSeconds: 15
         readinessProbe:
           httpGet:
             path: /health/ready
             port: 80
           initialDelaySeconds: 15
           timeoutSeconds: 60
-          periodSecond: 5
+          periodSeconds: 5
           failureThreshold: 3
           successThreshold: 2
 ---
