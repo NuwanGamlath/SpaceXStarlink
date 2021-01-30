@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: spacexstarlink-deployment
 spec:
-  replicas: 2
+  replicas: 3
   minReadySeconds: 5
   strategy:
     type: RollingUpdate
